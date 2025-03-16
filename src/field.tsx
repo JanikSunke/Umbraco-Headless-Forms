@@ -1,4 +1,4 @@
-import { FormFieldDto, FormFieldIndication } from '@/ec-core/formsClient';
+import { FormFieldDto, FormFieldIndication } from './formsClient';
 
 import { FieldComponents } from './fieldTypes/FieldComponents';
 import { useFormState } from './providers/formsStateProvider';

@@ -1,5 +1,5 @@
-import { FormFieldDto } from '~/ec-core/formsClient';
-import { FormDto } from '~/ec-core/umbracoClient';
+import { FormFieldDto } from '../formsClient';
+import { FormDto } from '../formsClient';
 
 export function checkBoolSettings(settings: Record<string, string>, key: string, present = true) {
   const firstChar = present.toString()[0]?.toUpperCase();

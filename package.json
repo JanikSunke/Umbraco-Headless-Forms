@@ -1,49 +1,36 @@
 {
   "name": "umbraco-headless-forms",
-  "version": "1.0.0",
+  "version": "1.0.8",
   "description": "Umbraco Headless Forms is a React npm package tailored for headless form functionality within Umbraco projects. This package specializes in rendering forms dynamically based on form id and submitting the data to Umbraco Forms seamlessly.",
-  "main": "dist/index.tsx",
-  "scripts": {
-    "build": "babel src --out-dir dist",
-    "test": "npm run test-ct",
-    "test-ct": "playwright test -c playwright-ct.config.ts",
-    "forms-openapi": "openapi --input http://localhost:22468/umbraco/swagger/forms-delivery/swagger.json --output src/formsClient --postfixServices Resource --useOptions"
-  },
-  "keywords": [
-    "umbraco",
-    "forms",
-    "umbraco-forms",
-    "react"
+  "main": "dist/index.js",
+  "files": [
+    "dist"
   ],
-  "author": "Janik Sunke",
-  "license": "ISC",
-  "dependencies": {
-    "@babel/cli": "^7.26.4",
-    "@babel/core": "^7.26.9",
-    "@babel/preset-env": "^7.26.9",
-    "@babel/preset-react": "^7.26.3",
-    "@playwright/test": "^1.50.1",
-    "clsx": "^2.1.1",
-    "openapi-typescript-codegen": "^0.29.0",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
   },
+  "scripts": {
+    "clean": "rimraf dist",
+    "prebuild": "npm run clean",
+    "build": "tsc",
+    "preversion": "npm run build",
+    "version": "npm publish"
+  },
+  "author": "",
+  "license": "ISC",
   "devDependencies": {
-    "@eslint/js": "^9.21.0",
-    "@playwright/experimental-ct-react": "^1.50.1",
-    "@types/node": "^22.13.9",
+    "@types/node": "^22.13.10",
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
-    "autoprefixer": "^10.4.20",
-    "eslint": "^8.57.1",
-    "eslint-config-standard": "^17.1.0",
-    "eslint-plugin-import": "^2.31.0",
-    "eslint-plugin-n": "^16.6.2",
-    "eslint-plugin-promise": "^6.6.0",
-    "eslint-plugin-react": "^7.37.4",
-    "globals": "^16.0.0",
-    "postcss": "^8.5.3",
-    "prettier": "^3.5.3",
-    "typescript-eslint": "^8.26.0"
+    "typescript": "^5.1.6"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0"
+  },
+  "dependencies": {
+    "rimraf": "^6.0.1"
   }
 }

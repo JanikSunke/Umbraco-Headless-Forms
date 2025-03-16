@@ -5,8 +5,9 @@ import {
   FieldConditionRuleOperator,
   FormConditionDto,
   FormConditionRuleDto,
-} from '../../../../formsClient';
-import { FieldState, FieldValue, FormState, useFormState } from '../providers/formsStateProvider';
+} from '../formsClient';
+import { useFormState } from '../providers/formsStateProvider';
+import { FieldState, FieldValue, FormState } from '../types/formStateTypes';
 
 const operatorFunctionMap = {
   [FieldConditionRuleOperator.CONTAINS]: (input: string) => (value: FieldValue) =>

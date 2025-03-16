@@ -1,4 +1,3 @@
-import { clsx } from 'clsx';
 import { useEffect } from 'react';
 
 import { FormFieldDto } from '../formsClient';
@@ -39,7 +38,7 @@ export default function CheckBox({ field }: { field: FormFieldDto }) {
       />
       <input
         autoComplete={field.settings.autocomplete ?? undefined}
-        className={clsx('umb-h-select', field.settings.acceptCopy ? 'order-first' : '')}
+        className={'umb-h-select' + field.settings.acceptCopy ? 'order-first' : ''}
         defaultChecked={defaultValue !== ''}
         id={field.id}
         max={UndefinedIfEmptyNumber(field.settings.maxLength)}
