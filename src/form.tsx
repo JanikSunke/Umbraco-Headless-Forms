@@ -1,6 +1,6 @@
 import { FormEvent, useCallback, useEffect, useState } from "react";
 
-import { FormDto, FormsResource } from "./formsClient";
+import { FormDto, FormsResource, OpenAPI } from "./formsClient";
 
 import Page from "./page";
 import PageSelector from "./pageSelector";
@@ -8,7 +8,11 @@ import { useFormState } from "./providers/formsStateProvider";
 import { FileValue } from "./types/formStateTypes";
 import ValidationSummary from "./validationSummary";
 
-export default function Form({ form }: { form: FormDto }) {
+export default function Form({ form, baseUrl, apiKey }: { form: FormDto; baseUrl: string; apiKey: string }) {
+  OpenAPI.BASE = baseUrl;
+  OpenAPI.HEADERS = {
+    "Api-Key": apiKey,
+  };
   const {
     state: { formState, formValid, formSubmitted },
     dispatch,

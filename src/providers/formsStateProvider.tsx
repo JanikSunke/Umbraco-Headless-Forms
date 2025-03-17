@@ -140,7 +140,7 @@ function formStateReducer(state: FieldContext, action: Action) {
   }
 }
 
-function FormStateProvider({ form }: { form: FormDto }) {
+function FormStateProvider({ form, baseUrl, apiKey }: { form: FormDto; baseUrl: string; apiKey: string }) {
   const [state, dispatch] = React.useReducer(formStateReducer, {
     formValid: false,
     formSubmitted: false,
@@ -153,7 +153,7 @@ function FormStateProvider({ form }: { form: FormDto }) {
 
   return (
     <FormContext.Provider value={value}>
-      <Form form={form} />
+      <Form form={form} baseUrl={baseUrl} apiKey={apiKey} />
     </FormContext.Provider>
   );
 }

@@ -12,9 +12,8 @@ export default async function UmbracoForm({ formId, baseUrl, apiKey }: { formId:
     const formData = await FormsResource.getUmbracoFormsDeliveryApiV1Definitions({
       id: formId,
     });
-    console.log(OpenAPI.BASE);
 
-    return <FormStateProvider form={formData} />;
+    return <FormStateProvider form={formData} baseUrl={baseUrl} apiKey={apiKey} />;
   } catch (error) {
     console.error(error);
   }
