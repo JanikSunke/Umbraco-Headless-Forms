@@ -27,6 +27,7 @@ jobs:
         with:
           node-version: 20
           registry-url: https://registry.npmjs.org/umbraco-headless-forms
+      - run: npm i
       - run: npm run version
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
