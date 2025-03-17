@@ -1,6 +1,6 @@
 {
   "name": "umbraco-headless-forms",
-  "version": "v1.1.0",
+  "version": "1.1.0",
   "description": "Umbraco Headless Forms is a React npm package tailored for headless form functionality within Umbraco projects. This package specializes in rendering forms dynamically based on form id and submitting the data to Umbraco Forms seamlessly.",
   "main": "dist/index.js",
   "files": [
