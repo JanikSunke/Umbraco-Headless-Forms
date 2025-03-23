@@ -1,6 +1,7 @@
 # Umbraco Headless Forms
 
 [![npm version](https://badge.fury.io/js/umbraco-headless-forms.svg)](https://www.npmjs.com/package/umbraco-headless-forms)
+[![Github: Repo](https://img.shields.io/badge/Github-Repo-blue.svg)](https://github.com/JanikSunke/Umbraco-Headless-Forms)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 A React component library for seamlessly integrating Umbraco Forms into headless applications. This package provides a simple way to render and handle Umbraco Forms dynamically, making it perfect for headless CMS implementations.
@@ -8,6 +9,7 @@ A React component library for seamlessly integrating Umbraco Forms into headless
 ## Overview
 
 Umbraco Headless Forms simplifies the process of:
+
 - Rendering Umbraco Forms dynamically in React applications
 - Handling form submissions through the Umbraco Forms API
 - Managing form validation and conditional field logic
@@ -50,11 +52,13 @@ Umbraco Headless Forms simplifies the process of:
 ### Installation
 
 Using npm:
+
 ```bash
 npm install umbraco-headless-forms
 ```
 
 Using yarn:
+
 ```bash
 yarn add umbraco-headless-forms
 ```
@@ -171,11 +175,7 @@ import { UmbracoForm } from "umbraco-headless-forms";
 export default function App() {
   return (
     <div className="my-form-container">
-      <UmbracoForm
-        formId="your-form-id"
-        baseUrl="https://your-umbraco-instance.com"
-        apiKey="your-api-key"
-      />
+      <UmbracoForm formId="your-form-id" baseUrl="https://your-umbraco-instance.com" apiKey="your-api-key" />
     </div>
   );
 }
